@@ -1,14 +1,15 @@
 package com.example.expensesplit.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "expense_splits")
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExpenseSplit {
@@ -19,6 +20,7 @@ public class ExpenseSplit {
 
     @ManyToOne
     @JoinColumn(name = "expense_id")
+    @JsonIgnore
     private Expense expense;
 
     @ManyToOne

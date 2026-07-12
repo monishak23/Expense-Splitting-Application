@@ -36,8 +36,9 @@ public class GroupController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Group> getGroup(@PathVariable Long id) {
+    public ResponseEntity<Group> getGroup(@PathVariable("id") Long id) {
         Group group = groupService.getGroupById(id);
+        System.out.println("****** " + group);
         return ResponseEntity.ok(group);
     }
 
