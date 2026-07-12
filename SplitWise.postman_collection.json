@@ -1,0 +1,262 @@
+{
+  "info": {
+    "_postman_id": "0d174e67-0bd0-44d9-9728-fd8db5dff65f",
+    "name": "SplitWise",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33364507"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "User Login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"monishak0401@gmail.com\",\r\n    \"password\": \"HEy@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register User",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Group",
+      "item": [
+        {
+          "name": "Create Group",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb25pc2hhazA0MDFAZ21haWwuY29tIiwiaWF0IjoxNzgzNjc3NDkzLCJleHAiOjE3ODM3NjM4OTN9.nEg91xxzQwvSPWyKXdyuChfsMfTRzcg4yceH0wzTnrM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Office Lunch\",\r\n    \"description\": \"Lunch expenses and people\",\r\n    \"memberEmails\": [\r\n        \"test@gmail.com\"\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/groups",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get group by id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb25pc2hhazA0MDFAZ21haWwuY29tIiwiaWF0IjoxNzgzNjc3NDkzLCJleHAiOjE3ODM3NjM4OTN9.nEg91xxzQwvSPWyKXdyuChfsMfTRzcg4yceH0wzTnrM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/groups/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "groups",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all group",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb25pc2hhazA0MDFAZ21haWwuY29tIiwiaWF0IjoxNzgzODM0NDI4LCJleHAiOjE3ODM5MjA4Mjh9.2pLjYbBEOO0I4l2Hhq5M2wIi8o3zzH1a50EHD3CYFMg",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/groups",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Expense",
+      "item": [
+        {
+          "name": "Create Expense",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb25pc2hhazA0MDFAZ21haWwuY29tIiwiaWF0IjoxNzgzODM0NDI4LCJleHAiOjE3ODM5MjA4Mjh9.2pLjYbBEOO0I4l2Hhq5M2wIi8o3zzH1a50EHD3CYFMg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"Starters\",\r\n    \"amount\": 1000,\r\n    \"currency\": \"INR\",\r\n    \"groupId\": 3,\r\n    \"splitType\": \"EQUAL\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/expenses",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "expenses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Balance",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb25pc2hhazA0MDFAZ21haWwuY29tIiwiaWF0IjoxNzgzODQzNTE5LCJleHAiOjE3ODM5Mjk5MTl9.C_FE8B8twc02JHzD1NJWJO4eQjV05o4D0su_r8iFAps",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/expenses/group/3/balances",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "expenses",
+                "group",
+                "3",
+                "balances"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Simplified Expense",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb25pc2hhazA0MDFAZ21haWwuY29tIiwiaWF0IjoxNzgzODQzNTE5LCJleHAiOjE3ODM5Mjk5MTl9.C_FE8B8twc02JHzD1NJWJO4eQjV05o4D0su_r8iFAps",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/expenses/group/3/simplified",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "expenses",
+                "group",
+                "3",
+                "simplified"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
